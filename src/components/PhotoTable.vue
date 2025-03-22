@@ -9,7 +9,7 @@
         </div>
       </div>
       <div>
-        <div v-for="i in 10" :key="i" class="grid grid-cols-5 border-b dark:border-slate-700">
+        <div v-for="i in 20" :key="i" class="grid grid-cols-5 border-b dark:border-slate-700">
           <div v-for="j in 5" :key="j" class="p-3">
             <div class="h-4 bg-gray-200 dark:bg-slate-700 rounded animate-pulse"></div>
           </div>
@@ -95,15 +95,6 @@ function handleScroll(event) {
 </script>
 
 <style scoped>
-/* Hide vertical scrollbar but still allow scrolling */
-.max-w-600 {
-  max-width: 600px;
-}
-
-.h-600 {
-  height: 600px;
-}
-
 table {
   width: 100%;
   table-layout: fixed;
@@ -111,7 +102,7 @@ table {
 
 table {
   scrollbar-width: thin;
-  scrollbar-color: #4a4a4a #2c2c2c; 
+  scrollbar-color: #4a4a4a #2c2c2c; /* Dark gray thumb and track */
 }
 
 td, th {
@@ -123,43 +114,4 @@ td, th {
 td:hover, th:hover {
   cursor: pointer;
 }
-
-/* Hide default vertical scrollbar but keep scrolling enabled */
-table::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-table::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-table::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-
-table::-webkit-scrollbar-button {
-  display: none;
-}
-
-/* Tooltip customization */
-td[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  z-index: 10;
-  font-size: 12px;
-  pointer-events: none;
-}
-
-td[title] {
-  position: relative;
-}
 </style>
-
